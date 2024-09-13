@@ -1,0 +1,115 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/04/2024  16:57:06  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KELI5C51\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\project PRINT (.\Listings\project.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  D:\KELI5C51\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\project (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0018H     UNIT         ?PR?_DELAYNMS?MAIN
+            CODE    001BH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0027H     000AH     UNIT         ?PR?REDUCEBUTTONSTRIKE?MAIN
+            CODE    0031H     0009H     UNIT         ?PR?DELAY1MS?MAIN
+            CODE    003AH     0005H     UNIT         ?PR?MAIN?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\project (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\project (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0031H         PUBLIC        Delay1ms
+  C:0003H         PUBLIC        _DelayNms
+  C:003AH         PUBLIC        main
+  C:0027H         PUBLIC        ReduceButtonStrike
+  -------         PROC          DELAY1MS
+  -------         DO            
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/04/2024  16:57:06  PAGE 2
+
+
+  D:0007H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:0031H         LINE#         3
+  C:0031H         LINE#         4
+  C:0031H         LINE#         7
+  C:0033H         LINE#         8
+  C:0035H         LINE#         10
+  C:0035H         LINE#         11
+  C:0037H         LINE#         12
+  C:0039H         LINE#         13
+  -------         ENDPROC       DELAY1MS
+  -------         PROC          _DELAYNMS
+  D:0004H         SYMBOL        n
+  C:0003H         LINE#         15
+  C:0007H         LINE#         16
+  C:000BH         LINE#         17
+  C:0015H         LINE#         18
+  C:0018H         LINE#         19
+  C:001AH         LINE#         20
+  -------         ENDPROC       _DELAYNMS
+  -------         PROC          REDUCEBUTTONSTRIKE
+  -------         DO            
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:0027H         LINE#         22
+  C:0027H         LINE#         23
+  C:0027H         LINE#         25
+  C:0029H         LINE#         26
+  C:0029H         LINE#         27
+  C:002CH         LINE#         28
+  C:0030H         LINE#         29
+  -------         ENDPROC       REDUCEBUTTONSTRIKE
+  -------         PROC          MAIN
+  C:003AH         LINE#         3
+  C:003AH         LINE#         4
+  C:003AH         LINE#         5
+  C:003AH         LINE#         6
+  C:003AH         LINE#         7
+  C:003DH         LINE#         8
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYNMS?MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REDUCEBUTTONSTRIKE?MAIN
+
+Program Size: data=9.0 xdata=0 code=63
+LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)

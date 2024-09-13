@@ -1,0 +1,5 @@
+".\Objects\main.obj",
+".\Objects\74HC595.obj",
+".\Objects\16M16LEDRender.obj" 
+TO ".\Objects\project" 
+PRINT(".\Listings\project.m51") RAMSIZE(256) 

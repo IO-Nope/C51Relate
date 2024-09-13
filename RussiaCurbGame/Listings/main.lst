@@ -1,0 +1,90 @@
+C51 COMPILER V9.54   MAIN                                                                  09/13/2024 16:04:33 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\Keli5C51\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\mai
+                    -n.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <REGX52.H>
+   2          #include "../Timer.h"
+   3          #include "../MatrixKB.h"
+   4          #include "../16M16LEDRender.h"
+   5          
+   6          enum CurbState{
+   7            Normal,
+   8            Left,
+   9            Right,
+  10            LeftAndRight
+  11          };
+  12          enum CurbType{
+  13            SquareCurb,
+  14            LCurb,
+  15            StraightCurb,
+  16            RLCurb,
+  17            TCurb
+  18          };
+  19          static unsigned char isFinishRender = 0;
+  20          static unsigned char isIPTAcquired = 0;
+  21          static unsigned char isNeedFall = 0;
+  22          xdata unsigned short ActingBuffer[16]={0x0000};
+  23          xdata unsigned short StcBuffer[16]={0xFFFF};
+  24          void main(){
+  25   1        //Game init
+  26   1        LEDInit();
+  27   1      
+  28   1        
+  29   1        //main loop
+  30   1        Timer0Init(getMsTick(1));
+  31   1        while(1){
+  32   2          //setRenderFlag
+  33   2          isFinishRender = 0;
+  34   2          //handle msg
+  35   2          
+  36   2          //acculate data
+  37   2          
+  38   2      
+  39   2          //render loop   
+  40   2          setBuffer(StcBuffer);
+  41   2          while(!isIPTAcquired){
+  42   3            LEDOnRender();
+  43   3            //set finish flag
+  44   3            isFinishRender = 1;
+  45   3          }
+  46   2        }
+  47   1      }
+  48          
+  49          void Timer0Interrupt() interrupt 1{
+  50   1        static unsigned int fpsTick = 1000/60;
+  51   1        static unsigned int fpsCount = 0;
+  52   1        static unsigned int fallSpeed = 1000;
+  53   1        static unsigned int fallCount = 0; 
+  54   1        fpsCount++;
+C51 COMPILER V9.54   MAIN                                                                  09/13/2024 16:04:33 PAGE 2   
+
+  55   1        fallCount++;
+  56   1        if(fpsCount >= fpsTick){
+  57   2          if(isFinishRender){
+  58   3            isIPTAcquired = 1;
+  59   3          }
+  60   2        }
+  61   1        if(fallCount >= fallSpeed){
+  62   2          isNeedFall = 1;
+  63   2        }
+  64   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     92    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =     64    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     11    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

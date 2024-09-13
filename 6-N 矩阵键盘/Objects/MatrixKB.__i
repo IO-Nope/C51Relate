@@ -1,0 +1,1 @@
+"..\MatrixKB.c" OPTIMIZE (8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\MatrixKB.lst) TABS (2) OBJECT(.\Objects\MatrixKB.obj)

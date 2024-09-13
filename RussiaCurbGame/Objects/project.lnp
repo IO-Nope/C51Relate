@@ -1,0 +1,7 @@
+".\Objects\main.obj",
+".\Objects\Timer.obj",
+".\Objects\74HC595.obj",
+".\Objects\16M16LEDRender.obj",
+".\Objects\MatrixKB.obj" 
+TO ".\Objects\project" 
+PRINT(".\Listings\project.m51") RAMSIZE(256) 

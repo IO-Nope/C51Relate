@@ -1,0 +1,50 @@
+C51 COMPILER V9.54   TIMER                                                                 09/13/2024 10:27:00 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE TIMER
+OBJECT MODULE PLACED IN .\Objects\Timer.obj
+COMPILER INVOKED BY: D:\Keli5C51\C51\BIN\C51.EXE ..\Timer.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings
+                    -\Timer.lst) TABS(2) OBJECT(.\Objects\Timer.obj)
+
+line level    source
+
+   1          #include"Timer.h"
+   2          #include<REGX52.h>
+   3          unsigned int getMsTick(unsigned char Tms){
+   4   1          if(Tms>6){
+   5   2              return 0;
+   6   2          }
+   7   1        return 65536 -1000 * Tms;
+   8   1      }
+   9          void Timer0Init(unsigned int Tus){
+  10   1          if (Tus > 65535)
+  11   1          {
+  12   2              Tus =65535;
+  13   2          }
+  14   1          TMOD = 0x01;
+  15   1          //存疑
+  16   1         TF0 = 0;
+  17   1         TR0 = 1;
+  18   1         //高低位分离
+  19   1         //1tick 1us 1000tick 1ms
+  20   1         TH0 = Tus/256;
+  21   1         TL0 = Tus%256;
+  22   1         ET0=1;
+  23   1         EA=1;
+  24   1         PT0 = 0;
+  25   1      }
+  26          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     73    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

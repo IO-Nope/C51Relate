@@ -1,0 +1,45 @@
+C51 COMPILER V9.54   MAIN                                                                  09/05/2024 18:26:26 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: D:\Keli5C51\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\mai
+                    -n.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <REGX52.H>
+   2          #include "../util.h"
+   3          #include "../SSDFct.h"
+   4          #define SSDNum P1
+   5          #define SSDLoc P0
+   6          void main()
+   7          {
+   8   1          while(1){
+   9   2            unsigned char i;
+  10   2          for (i=0; i < 8; i++)
+  11   2          {
+  12   3            SSDNum = GetSSDNum(i);
+  13   3            SSDLoc = GetSSDLoc(i);
+  14   3            if(i==7) SSDNum += GetSSDNum('.');
+  15   3            Delay100us();
+  16   3            SSDLoc = 0xFF;
+  17   3          }
+  18   2          
+  19   2          
+  20   2          }
+  21   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    273    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

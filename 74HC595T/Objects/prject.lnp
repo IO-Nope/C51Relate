@@ -1,0 +1,4 @@
+".\Objects\main.obj",
+".\Objects\74HC595.obj" 
+TO ".\Objects\prject" 
+PRINT(".\Listings\prject.m51") RAMSIZE(256) 

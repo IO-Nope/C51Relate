@@ -1,0 +1,216 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/05/2024  18:26:26  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KELI5C51\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\project PRINT (.\Listings\project.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  D:\KELI5C51\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\project (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         _DATA_GROUP_
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0062H     UNIT         ?PR?_GETSSDNUM?MAIN
+            CODE    0065H     004AH     UNIT         ?PR?_GETSSDLOC?MAIN
+            CODE    00AFH     0031H     UNIT         ?PR?MAIN?MAIN
+            CODE    00E0H     0018H     UNIT         ?PR?_DELAYNMS?MAIN
+            CODE    00F8H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0104H     000AH     UNIT         ?PR?REDUCEBUTTONSTRIKE?MAIN
+            CODE    010EH     0009H     UNIT         ?PR?DELAY1MS?MAIN
+            CODE    0117H     0009H     UNIT         ?PR?DELAY100US?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\project (MAIN)
+
+
+SEGMENT                               DATA_GROUP 
+  +--> CALLED SEGMENT               START    LENGTH
+---------------------------------------------------
+?C_C51STARTUP                       -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                       0008H    0001H
+  +--> ?PR?_GETSSDNUM?MAIN
+  +--> ?PR?_GETSSDLOC?MAIN
+  +--> ?PR?DELAY100US?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\project (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/05/2024  18:26:26  PAGE 2
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  C:010EH         PUBLIC        Delay1ms
+  C:00E0H         PUBLIC        _DelayNms
+  C:00AFH         PUBLIC        main
+  C:0065H         PUBLIC        _GetSSDLoc
+  C:0003H         PUBLIC        _GetSSDNum
+  C:0104H         PUBLIC        ReduceButtonStrike
+  C:0117H         PUBLIC        Delay100us
+  -------         PROC          DELAY1MS
+  -------         DO            
+  D:0007H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:010EH         LINE#         4
+  C:010EH         LINE#         5
+  C:010EH         LINE#         8
+  C:0110H         LINE#         9
+  C:0112H         LINE#         11
+  C:0112H         LINE#         12
+  C:0114H         LINE#         13
+  C:0116H         LINE#         14
+  -------         ENDPROC       DELAY1MS
+  -------         PROC          _DELAYNMS
+  D:0004H         SYMBOL        n
+  C:00E0H         LINE#         16
+  C:00E4H         LINE#         17
+  C:00E8H         LINE#         18
+  C:00F2H         LINE#         19
+  C:00F5H         LINE#         20
+  C:00F7H         LINE#         21
+  -------         ENDPROC       _DELAYNMS
+  -------         PROC          REDUCEBUTTONSTRIKE
+  -------         DO            
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:0104H         LINE#         23
+  C:0104H         LINE#         24
+  C:0104H         LINE#         26
+  C:0106H         LINE#         27
+  C:0106H         LINE#         28
+  C:0109H         LINE#         29
+  C:010DH         LINE#         30
+  -------         ENDPROC       REDUCEBUTTONSTRIKE
+  -------         PROC          DELAY100US
+  -------         DO            
+  D:0007H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:0117H         LINE#         31
+  C:0117H         LINE#         33
+  C:0119H         LINE#         34
+  C:011BH         LINE#         36
+  C:011BH         LINE#         37
+  C:011DH         LINE#         38
+  C:011FH         LINE#         39
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/05/2024  18:26:26  PAGE 3
+
+
+  -------         ENDPROC       DELAY100US
+  -------         PROC          _GETSSDNUM
+  D:0007H         SYMBOL        n
+  -------         DO            
+  D:0006H         SYMBOL        ans
+  -------         ENDDO         
+  C:0003H         LINE#         4
+  C:0003H         LINE#         6
+  C:0034H         LINE#         7
+  C:0038H         LINE#         8
+  C:003CH         LINE#         9
+  C:0040H         LINE#         10
+  C:0044H         LINE#         11
+  C:0048H         LINE#         12
+  C:004CH         LINE#         13
+  C:0050H         LINE#         14
+  C:0054H         LINE#         15
+  C:0058H         LINE#         16
+  C:005CH         LINE#         17
+  C:0060H         LINE#         18
+  C:0062H         LINE#         19
+  C:0062H         LINE#         20
+  C:0064H         LINE#         21
+  -------         ENDPROC       _GETSSDNUM
+  -------         PROC          _GETSSDLOC
+  D:0007H         SYMBOL        n
+  -------         DO            
+  D:0006H         SYMBOL        ans
+  -------         ENDDO         
+  C:0065H         LINE#         23
+  C:0065H         LINE#         25
+  C:008AH         LINE#         26
+  C:008AH         LINE#         27
+  C:008AH         LINE#         28
+  C:008CH         LINE#         29
+  C:008EH         LINE#         30
+  C:008EH         LINE#         31
+  C:0090H         LINE#         32
+  C:0092H         LINE#         33
+  C:0092H         LINE#         34
+  C:0094H         LINE#         35
+  C:0096H         LINE#         36
+  C:0096H         LINE#         37
+  C:0098H         LINE#         38
+  C:009AH         LINE#         39
+  C:009AH         LINE#         40
+  C:009CH         LINE#         41
+  C:009EH         LINE#         42
+  C:009EH         LINE#         43
+  C:00A0H         LINE#         44
+  C:00A2H         LINE#         45
+  C:00A2H         LINE#         46
+  C:00A4H         LINE#         47
+  C:00A6H         LINE#         48
+  C:00A6H         LINE#         49
+  C:00A8H         LINE#         50
+  C:00AAH         LINE#         51
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/05/2024  18:26:26  PAGE 4
+
+
+  C:00AAH         LINE#         52
+  C:00ACH         LINE#         53
+  C:00ACH         LINE#         54
+  C:00ACH         LINE#         55
+  C:00AEH         LINE#         56
+  -------         ENDPROC       _GETSSDLOC
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        i
+  -------         ENDDO         
+  C:00AFH         LINE#         6
+  C:00AFH         LINE#         7
+  C:00AFH         LINE#         8
+  C:00AFH         LINE#         10
+  C:00B2H         LINE#         11
+  C:00B2H         LINE#         12
+  C:00B9H         LINE#         13
+  C:00C0H         LINE#         14
+  C:00CFH         LINE#         15
+  C:00D2H         LINE#         16
+  C:00D5H         LINE#         17
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAYNMS?MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?REDUCEBUTTONSTRIKE?MAIN
+
+Program Size: data=10.0 xdata=0 code=288
+LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)
