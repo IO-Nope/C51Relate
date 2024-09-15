@@ -4,7 +4,7 @@
 void LEDInit();
 void LEDOnRender();
 void setBuffer(unsigned short *buffer);
-
+void LEDMergeBuffer(unsigned short *ABuffer, unsigned short *BBuffer);
 
 
 

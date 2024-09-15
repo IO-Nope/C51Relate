@@ -23,4 +23,12 @@ void Timer0Init(unsigned int Tus){
    EA=1;
    PT0 = 0;
 }
+void TimerReset(unsigned int Tus){
+    if (Tus > 65535)
+    {
+        Tus =65535;
+    }
+    TH0 = Tus/256;
+    TL0 = Tus%256;
+}
 
